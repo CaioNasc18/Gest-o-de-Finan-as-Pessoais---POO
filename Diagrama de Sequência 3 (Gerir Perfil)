@@ -1,0 +1,20 @@
+@startuml
+actor "Utilizador" as Uti
+participant "Sistema" as Sis
+participant "BaseDados" as BD
+
+Uti -> Sis : Solicitar edição de perfil
+Sis -> BD : Obter dados do utilizador
+BD --> Sis : Retorna dados
+Sis --> Uti : Mostrar formulário de edição
+
+Uti -> Sis : Enviar dados atualizados
+Sis -> Sis : Validar dados
+alt Dados válidos
+    Sis -> BD : Atualizar registo do utilizador
+    BD --> Sis : Confirmação
+    Sis --> Uti : Perfil atualizado com sucesso
+else Dados inválidos
+    Sis --> Uti : Mostrar erro de validação
+end
+@enduml
