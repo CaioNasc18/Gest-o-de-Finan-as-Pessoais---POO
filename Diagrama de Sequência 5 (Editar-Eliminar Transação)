@@ -1,0 +1,24 @@
+@startuml
+actor "Utilizador" as Uti
+participant "Sistema" as Sis
+participant "Transacao" as Tra
+participant "BaseDados" as BD
+
+Uti -> Sis : Selecionar transação
+Sis -> BD : Obter dados da transação
+BD --> Sis : Retorna detalhes
+Sis --> Uti : Mostrar opções (Editar / Eliminar)
+
+alt Editar
+    Uti -> Sis : Enviar dados atualizados
+    Sis -> Tra : Validar alterações
+    Sis -> BD : Atualizar registo
+    BD --> Sis : Confirmação
+    Sis --> Uti : Transação atualizada
+else Eliminar
+    Uti -> Sis : Confirmar eliminação
+    Sis -> BD : Apagar transação
+    BD --> Sis : Confirmação
+    Sis --> Uti : Transação eliminada
+end
+@enduml
