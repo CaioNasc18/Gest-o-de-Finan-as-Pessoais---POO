@@ -1,0 +1,30 @@
+@startuml
+actor "Administrador" as Adm
+participant "Sistema" as Sis
+participant "Categoria" as Cat
+participant "BaseDados" as BD
+
+Adm -> Sis : Solicitar gestão de categorias
+Sis -> BD : Obter lista de categorias
+BD --> Sis : Retorna lista
+Sis --> Adm : Mostrar categorias existentes
+
+alt Criar categoria
+    Adm -> Sis : Inserir nova categoria
+    Sis -> Cat : Validar nome e descrição
+    Sis -> BD : Guardar categoria
+    BD --> Sis : Confirmação
+    Sis --> Adm : Categoria criada
+else Editar categoria
+    Adm -> Sis : Alterar categoria
+    Sis -> Cat : Validar alterações
+    Sis -> BD : Atualizar categoria
+    BD --> Sis : Confirmação
+    Sis --> Adm : Categoria atualizada
+else Eliminar categoria
+    Adm -> Sis : Escolher categoria para eliminar
+    Sis -> BD : Remover categoria
+    BD --> Sis : Confirmação
+    Sis --> Adm : Categoria removida
+end
+@enduml
