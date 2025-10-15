@@ -1,0 +1,15 @@
+@startuml
+actor "Utilizador" as Uti
+participant "Sistema" as Sis
+participant "BaseDados" as BD
+
+Uti -> Sis : Inserir dados (id, email, password)
+Sis -> Sis : Validar dados
+alt Dados válidos
+    Sis -> BD : Guardar novo utilizador
+    BD --> Sis : Confirmação
+    Sis --> Uti : Conta criada com sucesso
+else Dados inválidos
+    Sis --> Uti : Mostrar erro de validação
+end
+@enduml
