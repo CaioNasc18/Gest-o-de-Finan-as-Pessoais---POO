@@ -1,0 +1,15 @@
+@startuml
+actor "Utilizador" as Uti
+participant "Sistema" as Sis
+participant "Relatorio" as Rel
+participant "BaseDados" as BD
+
+Uti -> Sis : Pedir relatório (início, fim)
+Sis -> Rel : Criar relatório
+Rel -> BD : Obter transações no período
+BD --> Rel : Retorna lista de transações
+Rel -> Rel : Calcular total de receitas e despesas
+Rel -> Rel : Gerar resumo por categoria
+Rel --> Sis : Relatório completo
+Sis --> Uti : Mostrar resultados (totais, saldo, categorias)
+@enduml
