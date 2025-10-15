@@ -1,0 +1,56 @@
+@startuml
+
+class Utilizador {
+  - id : int
+  - nome : string
+  - email : string
+  - password : string
+  - perfil : Perfil
+  + Registar() : void
+  + Login(email:string, password:string) : bool
+  + CriarTransacao(descricao:string, valor:decimal, categoria:Categoria, tipo:TipoTransacao) : Transacao
+  + GerarRelatorio(inicio:DateTime, fim:DateTime) : Relatorio
+}
+
+class Transacao {
+  - id : int
+  - descricao : string
+  - valor : decimal
+  - data : DateTime
+  - categoriaId : int
+  - tipo : TipoTransacao
+  + ValidarValor() : bool
+  + Editar(descricao:string, valor:decimal) : void
+  + Eliminar() : void
+}
+
+class Categoria {
+  - id : int
+  - nome : string
+  - descricao : string
+  + Criar() : void
+  + Editar(nome:string, descricao:string) : void
+  + Eliminar() : void
+}
+
+class Relatorio {
+  + CalcularTotalReceitas(inicio:DateTime, fim:DateTime) : decimal
+  + CalcularTotalDespesas(inicio:DateTime, fim:DateTime) : decimal
+  + GerarResumoPorCategoria(inicio:DateTime, fim:DateTime) : Dictionary
+}
+
+enum TipoTransacao {
+  Receita
+  Despesa
+}
+
+enum Perfil {
+  Utilizador_Normal
+  Administrador
+}
+
+Utilizador "1" -- "0..*" Transacao : cria
+Transacao *-- Categoria
+Relatorio .. Transacao
+
+@enduml
