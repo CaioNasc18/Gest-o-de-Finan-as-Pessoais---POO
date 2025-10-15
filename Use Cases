@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+actor "Utilizador" as Uti
+actor "Administrador" as Adm
+actor "Utilizadores" as Geral
+
+
+rectangle "Sistema de Gestão de Finanças Pessoais" {
+  usecase "Registar Utilizador" as UC1
+  usecase "Iniciar Sessão" as UC2
+  usecase "Gerir Perfil" as UC3
+  usecase "Registar Transação" as UC4
+  usecase "Editar/Eliminar Transação" as UC5
+  usecase "Gerir Categorias" as UC6
+  usecase "Gerar Relatórios" as UC7
+}
+
+Uti --> UC2
+Uti --> UC3
+Uti --> UC4
+Uti --> UC5
+Uti --> UC7
+Adm --> UC2
+Adm --> UC6
+Adm --> UC7
+Geral --|> (Uti)
+Geral --|> (Adm)
+Geral --|> UC1
+@enduml
