@@ -1,0 +1,19 @@
+@startuml
+actor "Utilizador" as Uti
+participant "Sistema" as Sis
+participant "Transacao" as Tra
+participant "Categoria" as Cat
+participant "BaseDados" as BD
+
+Uti -> Sis : Inserir dados (descrição, valor, tipo, categoria)
+Sis -> Tra : Criar objeto Transacao
+Tra -> Tra : Validar valor
+alt Valor válido
+    Sis -> Cat : Validar categoria
+    Sis -> BD : Guardar transação
+    BD --> Sis : Confirmação
+    Sis --> Uti : Transação registada com sucesso
+else Valor inválido
+    Sis --> Uti : Mostrar erro de valor inválido
+end
+@enduml
