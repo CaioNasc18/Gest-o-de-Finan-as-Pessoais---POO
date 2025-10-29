@@ -1,0 +1,189 @@
+using System;
+using System.Collections.Generic;
+
+public enum TipoTransacao
+{
+    Receita,
+    Despesa
+}
+
+public enum Perfil
+{
+    Utilizador_Normal,
+    Administrador
+}
+
+public class Utilizador
+{
+    // Atributos privados
+    private int id;
+    private string nome;
+    private string email;
+    private string password;
+    private Perfil perfil;
+
+    // Propriedades públicas
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
+    public Perfil Perfil { get; set; }
+
+    // Métodos públicos
+    public void Registar()
+    {
+        // Lógica para registrar o utilizador
+        Console.WriteLine("Utilizador registado com sucesso!");
+    }
+
+    public bool Login(string email, string password)
+    {
+        // Lógica para verificar as credenciais de login
+        return this.email == email && this.password == password;
+    }
+
+    public Transacao CriarTransacao(string descricao, decimal valor, Categoria categoria, TipoTransacao tipo)
+    {
+        // Cria e retorna uma nova transação
+        Transacao novaTransacao = new Transacao
+        {
+            Descricao = descricao,
+            Valor = valor,
+            Categoria = categoria,
+            Tipo = tipo,
+            Data = DateTime.Now
+        };
+        return novaTransacao;
+    }
+
+    public Relatorio GerarRelatorio(DateTime inicio, DateTime fim)
+    {
+        // Cria e retorna um relatório
+        return new Relatorio(inicio, fim);
+    }
+}
+
+public class Transacao
+{
+    public int Id { get; set; }
+    public string Descricao { get; set; }
+    public decimal Valor { get; set; }
+    public DateTime Data { get; set; }
+    public int CategoriaId { get; set; }
+    public TipoTransacao Tipo { get; set; }
+    public Categoria Categoria { get; set; }
+
+    public bool ValidarValor()
+    {
+        // Valida o valor da transação (exemplo simples: valor maior que 0)
+        return Valor > 0;
+    }
+
+    public void Editar(string descricao, decimal valor)
+    {
+        // Edita a transação
+        Descricao = descricao;
+        Valor = valor;
+    }
+
+    public void Eliminar()
+    {
+        // Lógica para eliminar a transação
+        Console.WriteLine($"Transação {Id} eliminada!");
+    }
+}
+
+public class Categoria
+{
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    public string Descricao { get; set; }
+
+    public void Criar()
+    {
+        // Lógica para criar uma categoria
+        Console.WriteLine($"Categoria '{Nome}' criada!");
+    }
+
+    public void Editar(string nome, string descricao)
+    {
+        // Lógica para editar a categoria
+        Nome = nome;
+        Descricao = descricao;
+    }
+
+    public void Eliminar()
+    {
+        // Lógica para eliminar a categoria
+        Console.WriteLine($"Categoria '{Nome}' eliminada!");
+    }
+}
+
+public class Relatorio
+{
+    public DateTime Inicio { get; set; }
+    public DateTime Fim { get; set; }
+
+    public Relatorio(DateTime inicio, DateTime fim)
+    {
+        Inicio = inicio;
+        Fim = fim;
+    }
+
+    public decimal CalcularTotalReceitas(DateTime inicio, DateTime fim)
+    {
+        // Lógica para calcular o total de receitas dentro do intervalo
+        decimal total = 0;
+        // Exemplo de transações filtradas por data
+        // total = ... somar valores de transações do tipo Receita
+        return total;
+    }
+
+    public decimal CalcularTotalDespesas(DateTime inicio, DateTime fim)
+    {
+        // Lógica para calcular o total de despesas dentro do intervalo
+        decimal total = 0;
+        // Exemplo de transações filtradas por data
+        // total = ... somar valores de transações do tipo Despesa
+        return total;
+    }
+
+    public Dictionary<string, decimal> GerarResumoPorCategoria(DateTime inicio, DateTime fim)
+    {
+        // Lógica para gerar um resumo por categoria no intervalo
+        Dictionary<string, decimal> resumo = new Dictionary<string, decimal>();
+        // Exemplo de processamento para gerar o resumo por categoria
+        return resumo;
+    }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Exemplo de uso das classes
+        Categoria categoriaAlimentacao = new Categoria { Nome = "Alimentação", Descricao = "Despesas com comida e bebida" };
+        categoriaAlimentacao.Criar();
+
+        Utilizador utilizador = new Utilizador
+        {
+            Id = 1,
+            Nome = "João",
+            Email = "joao@exemplo.com",
+            Password = "123456",
+            Perfil = Perfil.Utilizador_Normal
+        };
+        
+        utilizador.Registar();
+
+        Transacao transacao = utilizador.CriarTransacao("Compra supermercado", 150.00m, categoriaAlimentacao, TipoTransacao.Despesa);
+
+        if (transacao.ValidarValor())
+        {
+            Console.WriteLine($"Transação válida: {transacao.Descricao} - {transacao.Valor}");
+        }
+
+        Relatorio relatorio = utilizador.GerarRelatorio(DateTime.Now.AddDays(-30), DateTime.Now);
+        Console.WriteLine("Relatório gerado.");
+    }
+}
