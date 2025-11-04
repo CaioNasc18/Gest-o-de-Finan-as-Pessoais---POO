@@ -8,3 +8,11 @@ public class categoria
     string descricao;
     
 }
+
+puclic class utilizador
+{
+    int id;
+    string nome;
+    string email;
+    string senha;
+}
