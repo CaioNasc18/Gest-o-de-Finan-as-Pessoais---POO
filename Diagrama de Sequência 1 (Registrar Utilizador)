@@ -10,6 +10,6 @@ alt Dados válidos
     BD --> Sis : Confirmação
     Sis --> Uti : Conta criada com sucesso
 else Dados inválidos
-    Sis --> Uti : Mostrar erro de validação //asdas teste final caio nascimento ta funfando?
+    Sis --> Uti : Mostrar erro de validação
 end
 @enduml
