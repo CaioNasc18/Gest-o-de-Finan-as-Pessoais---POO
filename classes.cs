@@ -9,10 +9,17 @@ public class categoria
     
 }
 
-puclic class utilizador
+public class utilizador
 {
     int id;
     string nome;
     string email;
     string senha;
+    
+}
+
+public enum perfil
+{
+    Administrador,
+    UtilizadorComum
 }
