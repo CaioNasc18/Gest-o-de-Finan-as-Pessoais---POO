@@ -9,10 +9,20 @@ public class categoria
     
 }
 
-puclic class utilizador
+public class utilizador
 {
     int id;
     string nome;
     string email;
     string senha;
+}
+
+public class transacao
+{
+    int id;
+    string descricao;
+    float valor;
+    DateTime data;
+    int categoriaId;
+    
 }
