@@ -26,3 +26,9 @@ public class transacao
     int categoriaId;
     
 }
+    
+public enum perfil
+{
+    Administrador,
+    UtilizadorComum
+}
