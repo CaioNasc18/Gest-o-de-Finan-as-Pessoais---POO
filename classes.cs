@@ -15,6 +15,7 @@ public class utilizador
     string nome;
     string email;
     string senha;
+    Perfil perfil;
 }
 
 public class transacao
@@ -27,8 +28,8 @@ public class transacao
     
 }
     
-public enum perfil
+public enum Perfil
 {
     Administrador,
-    UtilizadorComum
+    Utilizador_Normal
 }
