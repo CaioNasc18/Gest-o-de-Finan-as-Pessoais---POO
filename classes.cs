@@ -190,7 +190,7 @@ public class utilizador
             novaTransacao.valor = float.Parse(Console.ReadLine());
         }
 
-        do
+        do //testestesteste
         {
             Console.WriteLine("Qual é o tipo da transação? (1- Receita, 2- Despesa)"); //obrigatorio
             int tipoInput = int.Parse(Console.ReadLine());
@@ -325,7 +325,25 @@ public class transacao
         }
     }
 }
-    
+
+public class relatorio
+{
+    public float calcularTotalReceitas(DateTime inicio, DateTime fim, List<transacao> transacoes)
+    {
+        float total = 0;
+        foreach (transacao t in transacoes)
+        {
+            if (t.tipo == TipoTransacao.Receita && t.data >= inicio && t.data <= fim)
+            {
+                total += t.valor;
+            }
+        }
+
+        Console.WriteLine($"Total de receitas entre {inicio.ToShortDateString()} e {fim.ToShortDateString()}: {total}");
+        return total;
+    }
+}
+
 public enum Perfil
 {
     Administrador,
