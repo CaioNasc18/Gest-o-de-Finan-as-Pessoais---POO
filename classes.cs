@@ -16,6 +16,42 @@ public class utilizador
     string email;
     string senha;
     Perfil perfil;
+
+    public void Registar (nome string, email string, senha string)
+    {
+        console.writeline("Preencha todos os campos para registar um novo utilizador.");
+
+        
+        while (string.trim(nome) == "" || string.trim(email) == "" || string.trim(senha) == "")
+        {
+    
+            console.writeline("Nome: ");
+            nome = console.readline();
+
+            console.writeline("Email: ");
+            email = console.readline();
+
+            console.writeline("Senha: ");
+            senha = console.readline();
+
+            if (string.trim(nome) == "" || string.trim(email) == "" || string.trim(senha) == "")
+            {
+                console.writeline("Todos os campos são obrigatórios. Por favor, tente novamente.");
+            }
+            else if (!email.contains("@") || !email.contains("."))
+            {
+                console.writeline("Email inválido. Por favor, insira um email válido.");
+                email = "";
+            }
+            else
+            {
+                console.writeline("Registo bem-sucedido!");
+            }
+
+        }
+
+
+    }
 }
 
 public class transacao
