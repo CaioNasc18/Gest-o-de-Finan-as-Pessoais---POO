@@ -45,7 +45,7 @@ public class utilizador
     string senha;
     Perfil perfil;
 
-    public void Registar (string nome, string email, string senha)
+    public void Registar(string nome, string email, string senha)
     {
         console.writeline("Preencha todos os campos para registar um novo utilizador.");
 
@@ -81,7 +81,7 @@ public class utilizador
 
     }
 
-    public bool (string email, string password)
+    public bool Login(string email, string password)
 }
 
 public class transacao
