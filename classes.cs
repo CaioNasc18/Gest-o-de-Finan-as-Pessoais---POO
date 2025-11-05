@@ -25,11 +25,17 @@ public class transacao
     float valor;
     DateTime data;
     int categoriaId;
-    
+    TipoTransacao tipo;
 }
     
 public enum Perfil
 {
     Administrador,
     Utilizador_Normal
+}
+
+public enum TipoTransacao
+{
+    Receita,
+    Despesa
 }
