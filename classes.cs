@@ -173,6 +173,81 @@ public class transacao
     DateTime data;
     int categoriaId;
     TipoTransacao tipo;
+
+    public bool ValidarValor()
+    {
+        if (valor <= 0)
+        {
+            Console.WriteLine("O valor da transação deve ser maior que zero.");
+            return false;
+        }
+        return true;
+    }
+
+    public void Editar(string descricao, float valor)
+    {
+        this.descricao = descricao;
+        this.valor = valor;
+
+        Console.WriteLine("O que deseja editar? (d/v)");
+        string resposta = Console.ReadLine().ToLower();
+
+        if (resposta == "d")
+        {
+            Console.WriteLine("Insira a nova descrição:");
+            descricao = Console.ReadLine();
+            this.descricao = descricao;
+
+            if (descricao.Trim == "")
+            {
+                descricao = "SEM DESCRIÇÃO";
+                this.descricao = descricao;
+            }
+
+            Console.WriteLine("Descrição atualizada com sucesso.");
+        }
+        else if (resposta == "v")
+        {
+            Console.WriteLine("Insira o novo valor:");
+            valor = float.Parse(Console.ReadLine());
+            this.valor = valor;
+
+            while (valor <= 0)
+            {
+                Console.WriteLine("O valor deve ser maior que zero. Insira o novo valor:");
+                valor = float.Parse(Console.ReadLine());
+                this.valor = valor;
+            }
+
+            Console.WriteLine("Valor atualizado com sucesso.");
+        }
+        else
+        {
+            Console.WriteLine("Opção inválida. Nenhuma alteração foi feita.");
+        }
+    }
+
+    public void Eliminar()
+    {
+        Console.WriteLine("Tem certeza que deseja eliminar esta transação? (s/n)");
+        string resposta = Console.ReadLine().ToLower();
+
+        if (resposta == "s")
+        {
+            this.id = 0;
+            this.descricao = null;
+            this.valor = 0;
+            this.data = default(DateTime);
+            this.categoriaId = 0;
+            this.tipo = 0;
+
+            Console.WriteLine("Transação eliminada com sucesso.");
+        }
+        else
+        {
+            Console.WriteLine("Operação cancelada. A transação não foi eliminada.");
+        }
+    }
 }
     
 public enum Perfil
