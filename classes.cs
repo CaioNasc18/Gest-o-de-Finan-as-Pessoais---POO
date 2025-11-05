@@ -41,9 +41,6 @@ public class categoria
 
     public void Editar(string nome, string descricao)
     {
-        this.nome = nome;
-        this.descricao = descricao;
-
         Console.WriteLine("Deseja alterar a descrição ou o nome? (d/n)");
         string resposta = Console.ReadLine().ToLower();
 
@@ -85,7 +82,21 @@ public class categoria
 
     public void Eliminar()
     {
-        
+        Console.WriteLine("Qual categoria deseja eliminar?");
+        string nomeCategoria = Console.ReadLine();
+
+        if (nomeCategoria == this.nome)
+        {
+            this.id = 0;
+            this.nome = null;
+            this.descricao = null;
+
+            Console.WriteLine($"Categoria '{nomeCategoria}' eliminada com sucesso.");
+        }
+        else
+        {
+            Console.WriteLine("Categoria não encontrada.");
+        }
     }
 }
 
@@ -94,11 +105,13 @@ public class utilizador
     int id;
     string nome;
     string email;
-    string senha;
+    string password;
     Perfil perfil;
 
-    public void Registar (string nome, string email, string senha)
+    public void Registar ()
     {
+
+        utilizador novoUtilizador = new utilizador();
         console.writeline("Preencha todos os campos para registar um novo utilizador.");
 
         
@@ -106,15 +119,15 @@ public class utilizador
         {
     
             console.writeline("Nome: ");
-            nome = console.readline();
+            novoUtilizador.nome = console.readline();
 
             console.writeline("Email: ");
-            email = console.readline();
+            novoUtilizador.email = console.readline();
 
             console.writeline("Senha: ");
-            senha = console.readline();
+            novoUtilizador.password = console.readline();
 
-            if (string.trim(nome) == "" || string.trim(email) == "" || string.trim(senha) == "")
+            if (string.trim(nome) == "" || string.trim(email) == "" || string.trim(password) == "")
             {
                 console.writeline("Todos os campos são obrigatórios. Por favor, tente novamente.");
             }
@@ -135,7 +148,20 @@ public class utilizador
 
     public bool Login(string email, string password)
     {
-        
+        Console.WriteLine("Insira seu email:");
+        email = Console.ReadLine();
+        Console.WriteLine("Insira sua senha:");
+        password = Console.ReadLine();
+        if (email == this.email && password == this.password)
+        {
+            Console.WriteLine("Login bem-sucedido!");
+            return true;
+        }
+        else
+        {
+            Console.WriteLine("Email ou senha incorretos. Tente novamente.");
+            return false;
+        }
     }
 }
 
