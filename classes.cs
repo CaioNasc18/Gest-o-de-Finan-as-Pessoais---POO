@@ -115,7 +115,7 @@ public class utilizador
         console.writeline("Preencha todos os campos para registar um novo utilizador.");
 
         
-        while (string.trim(nome) == "" || string.trim(email) == "" || string.trim(senha) == "")
+        while (string.trim(nome) == "" || string.trim(email) == "" || string.trim(password) == "")
         {
     
             console.writeline("Nome: ");
@@ -124,8 +124,8 @@ public class utilizador
             console.writeline("Email: ");
             novoUtilizador.email = console.readline();
 
-            console.writeline("Senha: ");
-            novoUtilizador.password = console.readline();
+            console.writeline("Password: ");
+            senha = console.readline();
 
             if (string.trim(nome) == "" || string.trim(email) == "" || string.trim(password) == "")
             {
