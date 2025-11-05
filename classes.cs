@@ -163,6 +163,82 @@ public class utilizador
             return false;
         }
     }
+
+    public transacao criarTransacao(string descricao, float valor, categoria categoria, TipoTransacao tipo)
+    {
+        transacao novaTransacao = new transacao();
+        novaTransacao.descricao = descricao;
+        novaTransacao.valor = valor;
+        novaTransacao.categoriaId = categoria.id;
+        novaTransacao.tipo = tipo;
+        novaTransacao.data = DateTime.Now;
+
+        Console.WriteLine("De uma descrição para a transação:"); //opcional
+        novaTransacao.descricao = Console.ReadLine();
+
+        if (novaTransacao.descricao.Trim == "")
+        {
+            novaTransacao.descricao = "SEM DESCRIÇÃO";
+        }
+
+        Console.WriteLine("Insira o valor da transação:"); //obrigatorio
+        novaTransacao.valor = float.Parse(Console.ReadLine());
+
+        while (!novaTransacao.ValidarValor())
+        {
+            Console.WriteLine("Insira um valor válido para a transação:");
+            novaTransacao.valor = float.Parse(Console.ReadLine());
+        }
+
+        do
+        {
+            Console.WriteLine("Qual é o tipo da transação? (1- Receita, 2- Despesa)"); //obrigatorio
+            int tipoInput = int.Parse(Console.ReadLine());
+
+            if (tipoInput == 1)
+            {
+                novaTransacao.tipo = TipoTransacao.Receita;
+            }
+            else if (tipoInput == 2)
+            {
+                novaTransacao.tipo = TipoTransacao.Despesa;
+            }
+            else
+            {
+                Console.WriteLine("Tipo inválido. Por favor, insira 1 para Receita ou 2 para Despesa.");
+            }
+        } while (tipoInput != 1 && tipoInput != 2);
+
+        Random rnd = new Random();//obrigatorio (automatico)
+        novaTransacao.id = rnd.Next(1, 100000);
+
+        while (novaTransacao.id == this.id)
+        {
+            novaTransacao.id = rnd.Next(1, 100000);
+        }
+
+        Console.WriteLine("existe uma categoria associada a esta transação? (s/n)"); //opcional
+        string resposta = Console.ReadLine().ToLower();
+
+        if (resposta == "s")
+        {
+            novaTransacao.categoriaId = categoria.id;
+        }
+        else if (resposta == "n")
+        {
+            novaTransacao.categoriaId = 0; // Sem categoria
+        }
+        else
+        {
+            Console.WriteLine("Opção inválida. Nenhuma categoria foi associada.");
+            novaTransacao.categoriaId = 0; // Sem categoria
+        }
+
+        novaTransacao.data = DateTime.Now;//obrigatorio (automatico)
+
+        Console.WriteLine("Transação criada com sucesso com o ID " + novaTransacao.id);
+        return novaTransacao;
+    }
 }
 
 public class transacao
