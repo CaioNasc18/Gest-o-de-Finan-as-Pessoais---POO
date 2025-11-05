@@ -132,6 +132,11 @@ public class utilizador
 
 
     }
+
+    public bool Login(string email, string password)
+    {
+        
+    }
 }
 
 public class transacao
