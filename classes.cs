@@ -94,15 +94,15 @@ public class utilizador
     int id;
     string nome;
     string email;
-    string senha;
+    string password;
     Perfil perfil;
 
-    public void Registar (string nome, string email, string senha)
+    public void Registar (string nome, string email, string password)
     {
         console.writeline("Preencha todos os campos para registar um novo utilizador.");
 
         
-        while (string.trim(nome) == "" || string.trim(email) == "" || string.trim(senha) == "")
+        while (string.trim(nome) == "" || string.trim(email) == "" || string.trim(password) == "")
         {
     
             console.writeline("Nome: ");
@@ -111,10 +111,10 @@ public class utilizador
             console.writeline("Email: ");
             email = console.readline();
 
-            console.writeline("Senha: ");
+            console.writeline("Password: ");
             senha = console.readline();
 
-            if (string.trim(nome) == "" || string.trim(email) == "" || string.trim(senha) == "")
+            if (string.trim(nome) == "" || string.trim(email) == "" || string.trim(password) == "")
             {
                 console.writeline("Todos os campos são obrigatórios. Por favor, tente novamente.");
             }
@@ -135,7 +135,33 @@ public class utilizador
 
     public bool Login(string email, string password)
     {
+         console.writeline("Preencha todos os campos para fazer login.");
+
         
+        while (string.trim(email) == "" || string.trim(password) == "")
+        {
+
+            console.writeline("Email: ");
+            email = console.readline();
+
+            console.writeline("Password: ");
+            senha = console.readline();
+
+            if (string.trim(email) == "" || string.trim(password) == "")
+            {
+                console.writeline("Todos os campos são obrigatórios. Por favor, tente novamente.");
+            }
+            else if (!email.contains("@") || !email.contains("."))
+            {
+                console.writeline("Email inválido. Por favor, insira um email válido.");
+                email = "";
+            }
+            else
+            {
+                console.writeline("Login bem-sucedido!");
+            }
+
+        }
     }
 }
 
