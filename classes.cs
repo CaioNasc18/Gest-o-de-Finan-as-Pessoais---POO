@@ -9,31 +9,83 @@ public class categoria
 
     public void Criar()
     {
+        categoria novaCategoria = new categoria();
+
         Console.WriteLine("Qual será a categoria?");
-        nome = Console.ReadLine();
+        novaCategoria.nome = Console.ReadLine();
 
-        Console.WriteLine("Quer adicionar alguma descrição?");
-        descricao = Console.ReadLine();
-
-        if (descricao.trim == "")
+        if (nome.Trim == "")
         {
-            descricao == "SEM DESCRIÇÃO";
+            Console.WriteLine("O nome da categoria não pode estar vazio. Por favor, insira um nome válido.");
+            novaCategoria.nome = Console.ReadLine();
         }
 
-        random rnd = new random;
-        id = rnd.Next(1, 100000)
+        Console.WriteLine("Quer adicionar alguma descrição?");
+        novaCategoria.descricao = Console.ReadLine();
 
-        //TODO: CASO ID JA EXISTA, CRIAR OUTRO ID
+        if (descricao.Trim == "")
+        {
+            novaCategoria.descricao == "SEM DESCRIÇÃO";
+        }
+
+        random rnd = new random();
+        novaCategoria.id = rnd.Next(1, 100000);
+
+        while(novaCategoria.id == this.id)
+        {
+            novaCategoria.id = rnd.Next(1, 100000);
+        }
+
+        Console.WriteLine($"Categoria '{novaCategoria.nome}' criada com sucesso com o ID {novaCategoria.id}.");
     }
 
-    public void Editar(nome, descricao)
+    public void Editar(string nome, string descricao)
     {
+        this.nome = nome;
+        this.descricao = descricao;
+
+        Console.WriteLine("Deseja alterar a descrição ou o nome? (d/n)");
+        string resposta = Console.ReadLine().ToLower();
+
+        if (resposta == "d")
+        {
+            Console.WriteLine("Insira a nova descrição:");
+            descricao = Console.ReadLine();
+            this.descricao = descricao;
+
+            if (descricao.Trim == "")
+            {
+                descricao = "SEM DESCRIÇÃO";
+                this.descricao = descricao;
+            }
+
+            Console.WriteLine("Descrição atualizada com sucesso.");
+        }
+        else if (resposta == "n")
+        {
+            Console.WriteLine("Insira o novo nome:");
+            nome = Console.ReadLine();
+            this.nome = nome;
+
+            while (string.Trim(nome) == "")
+            {
+                Console.WriteLine("O nome não pode estar vazio. Insira o novo nome:");
+                nome = Console.ReadLine();
+                this.nome = nome;
+            }
+
+            Console.WriteLine("Nome atualizado com sucesso.");
+        }
+        else
+        {
+            Console.WriteLine("Opção inválida. Nenhuma alteração foi feita.");
+        }
 
     }
 
     public void Eliminar()
     {
-
+        
     }
 }
 
@@ -45,7 +97,7 @@ public class utilizador
     string senha;
     Perfil perfil;
 
-    public void Registar (nome string, email string, senha string)
+    public void Registar (string nome, string email, string senha)
     {
         console.writeline("Preencha todos os campos para registar um novo utilizador.");
 
