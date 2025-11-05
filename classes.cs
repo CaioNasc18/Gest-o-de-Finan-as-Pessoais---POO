@@ -288,9 +288,9 @@ public class transacao
             valor = float.Parse(Console.ReadLine());
             this.valor = valor;
 
-            while (valor <= 0)
+            while (!ValidarValor())
             {
-                Console.WriteLine("O valor deve ser maior que zero. Insira o novo valor:");
+                Console.WriteLine("Insira um valor válido:");
                 valor = float.Parse(Console.ReadLine());
                 this.valor = valor;
             }
