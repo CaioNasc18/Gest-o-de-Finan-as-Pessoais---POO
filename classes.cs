@@ -190,7 +190,7 @@ public class utilizador
             novaTransacao.valor = float.Parse(Console.ReadLine());
         }
 
-        do //testestesteste
+        do
         {
             Console.WriteLine("Qual é o tipo da transação? (1- Receita, 2- Despesa)"); //obrigatorio
             int tipoInput = int.Parse(Console.ReadLine());
