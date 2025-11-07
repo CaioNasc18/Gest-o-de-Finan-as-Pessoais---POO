@@ -240,15 +240,27 @@ public class utilizador
         return novaTransacao;
     }
 
-    public relatorio gerarRelatorio(DateTime inicio, DateTime fim)
+    public void gerarRelatorio(DateTime inicio, DateTime fim, List<transacao> transacoes)
     {
         Console.WriteLine("Qual o período do relatório? Insira a data de início (dd/mm/aaaa):");
         inicio = DateTime.Parse(Console.ReadLine());
         Console.WriteLine("Insira a data de fim (dd/mm/aaaa):");
         fim = DateTime.Parse(Console.ReadLine());
-        relatorio novoRelatorio = new relatorio();
-        Console.WriteLine("Relatório gerado com sucesso.");
-         
+
+        foreach (transacao t in transacoes)
+        {
+            if (t.data < inicio || t.data > fim)
+            {
+                Console.WriteLine("Nenhuma transação encontrada no período especificado.");
+                return null;
+            }
+            else
+            {
+                Console.WriteLine("Transações encontradas no período especificado:");
+                Console.WriteLine($"ID: {t.id}, Descrição: {t.descricao}, Valor: {t.valor}, Data: {t.data.ToShortDateString()}, Categoria ID: {t.categoriaId}, Tipo: {t.tipo}");
+                Console.WriteLine("Relatório gerado com sucesso.");
+            }
+        }
     }
 }
 
