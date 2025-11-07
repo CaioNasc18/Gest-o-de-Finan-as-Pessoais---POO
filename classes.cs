@@ -190,7 +190,7 @@ public class utilizador
             novaTransacao.valor = float.Parse(Console.ReadLine());
         }
 
-        do
+        do //testestesteste
         {
             Console.WriteLine("Qual é o tipo da transação? (1- Receita, 2- Despesa)"); //obrigatorio
             int tipoInput = int.Parse(Console.ReadLine());
@@ -238,6 +238,13 @@ public class utilizador
 
         Console.WriteLine("Transação criada com sucesso com o ID " + novaTransacao.id);
         return novaTransacao;
+    }
+
+    public relatorio gerarRelatorio(DateTime inicio, DateTime fim)
+    {
+        relatorio novoRelatorio = new relatorio();
+    
+         
     }
 }
 
@@ -342,16 +349,52 @@ public class relatorio
         Console.WriteLine($"Total de receitas entre {inicio.ToShortDateString()} e {fim.ToShortDateString()}: {total}");
         return total;
     }
-}
 
-public enum Perfil
-{
-    Administrador,
-    Utilizador_Normal
-}
+    public float calcularTotalDespesas(DateTime inicio, DateTime fim, List<transacao> transacoes)
+    {
+        float total = 0;
+        foreach (transacao t in transacoes)
+        {
+            if (t.tipo == TipoTransacao.Despesa && t.data >= inicio && t.data <= fim)
+            {
+                total += t.valor;
+            }
+        }
+        Console.WriteLine($"Total de despesas entre {inicio.ToShortDateString()} e {fim.ToShortDateString()}: {total}");
+        return total;
+    }
 
-public enum TipoTransacao
-{
-    Receita,
-    Despesa
-}
+    public Dictionary<> GerarResumoPorCategoria(DateTime inicio, DateTime fim, List<transacao> transacoes, List<categoria> categorias)
+    {
+        Dictionary<string, float> resumo = new Dictionary<string, float>();
+
+        foreach (categoria cat in categorias)
+        {
+            float totalCategoria = 0;
+            foreach (transacao t in transacoes)
+            {
+                if (t.categoriaId == cat.id && t.data >= inicio && t.data <= fim)
+                {
+                    totalCategoria += t.valor;
+                }
+
+            }
+            resumo[cat.nome] = totalCategoria;
+            Console.WriteLine($"Categoria: {cat.nome}, Total: {totalCategoria}");
+
+        }
+        return resumo;
+    }
+}    
+
+    public enum Perfil
+    {
+        Administrador,
+        Utilizador_Normal
+    }
+
+    public enum TipoTransacao
+    {
+        Receita,
+        Despesa
+    }
