@@ -242,8 +242,12 @@ public class utilizador
 
     public relatorio gerarRelatorio(DateTime inicio, DateTime fim)
     {
+        Console.WriteLine("Qual o período do relatório? Insira a data de início (dd/mm/aaaa):");
+        inicio = DateTime.Parse(Console.ReadLine());
+        Console.WriteLine("Insira a data de fim (dd/mm/aaaa):");
+        fim = DateTime.Parse(Console.ReadLine());
         relatorio novoRelatorio = new relatorio();
-    
+        Console.WriteLine("Relatório gerado com sucesso.");
          
     }
 }
