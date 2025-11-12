@@ -108,21 +108,32 @@ public class utilizador
     string password;
     Perfil perfil;
 
-    public void Registar ()
+    public void Registar()
     {
 
         utilizador novoUtilizador = new utilizador();
         console.writeline("Preencha todos os campos para registar um novo utilizador.");
 
-        
+
         while (string.trim(nome) == "" || string.trim(email) == "" || string.trim(password) == "")
         {
-    
+
             console.writeline("Nome: ");
             novoUtilizador.nome = console.readline();
 
             console.writeline("Email: ");
             novoUtilizador.email = console.readline();
+
+            Console.WriteLine("Escolha o perfil do utilizador: (1- Administrador, 2- Utilizador Normal)");
+            int perfilInput = int.Parse(Console.ReadLine());
+            if (perfilInput == 1)
+            {
+                novoUtilizador.perfil = Perfil.Administrador; 
+            }
+            else
+            {
+                novoUtilizador.perfil = Perfil.Utilizador_Normal; // TODO: perfil utilizador normal nao pode ter acesso a certas funcionalidades
+            }
 
             console.writeline("Password: ");
             senha = console.readline();
@@ -142,7 +153,6 @@ public class utilizador
             }
 
         }
-
 
     }
 

@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjetoPOOWeb", "ProjetoPOOWeb", "{D5ED1F6F-7B0C-AA40-0FD0-25E42FD09952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POOWeb", "ProjetoPOOWeb\POOWeb\POOWeb.csproj", "{084B2E4F-D246-97FB-2892-655A5FA1860B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{084B2E4F-D246-97FB-2892-655A5FA1860B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084B2E4F-D246-97FB-2892-655A5FA1860B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084B2E4F-D246-97FB-2892-655A5FA1860B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084B2E4F-D246-97FB-2892-655A5FA1860B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{084B2E4F-D246-97FB-2892-655A5FA1860B} = {D5ED1F6F-7B0C-AA40-0FD0-25E42FD09952}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BD88413-C2C4-4B7C-9FD1-CCD36971DC9C}
+	EndGlobalSection
+EndGlobal
