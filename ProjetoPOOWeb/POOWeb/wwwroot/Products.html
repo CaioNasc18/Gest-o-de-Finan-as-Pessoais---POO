@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+    
+<head>
+    <meta charset="utf-8" />
+    <title>Produto</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <h1>Detalhes do Produto</h1>
+    <div id="product-details"></div>
+    <script>
+        async function loadProduct()
+        {
+            const response = await fetch("/product");
+            const product = await response.json();
+            document.getElementById("product-details").innerHTML = `
+            <p><strong>ID:</strong> ${product.id}</p>
+            <p><strong>Nome:</strong> ${product.name}</p>
+            <p><strong>Preço:</strong> €${product.price}</p>
+            `;
+        }
+        loadProduct();
+    </script>
+</body>
+</html>
