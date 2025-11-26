@@ -28,6 +28,3 @@ C:\Users\Caio Nascimento\Desktop\Projeto-POO\Gest-o-de-Finan-as-Pessoais---POO\P
 C:\Users\Caio Nascimento\Desktop\Projeto-POO\Gest-o-de-Finan-as-Pessoais---POO\ProjetoPOOWeb\POOWeb\obj\Debug\net9.0\POOWeb.genruntimeconfig.cache
 C:\Users\Caio Nascimento\Desktop\Projeto-POO\Gest-o-de-Finan-as-Pessoais---POO\ProjetoPOOWeb\POOWeb\obj\Debug\net9.0\ref\POOWeb.dll
 C:\Users\Caio Nascimento\Desktop\Projeto-POO\Gest-o-de-Finan-as-Pessoais---POO\ProjetoPOOWeb\POOWeb\bin\Debug\net9.0\POOWeb.staticwebassets.runtime.json
-C:\Users\Caio Nascimento\Desktop\Projeto-POO\Gest-o-de-Finan-as-Pessoais---POO\ProjetoPOOWeb\POOWeb\obj\Debug\net9.0\compressed\tcrw8q61nj-bjlrfred35.gz
-C:\Users\Caio Nascimento\Desktop\Projeto-POO\Gest-o-de-Finan-as-Pessoais---POO\ProjetoPOOWeb\POOWeb\obj\Debug\net9.0\compressed\n4batc9spw-ruenf36vpg.gz
-C:\Users\Caio Nascimento\Desktop\Projeto-POO\Gest-o-de-Finan-as-Pessoais---POO\ProjetoPOOWeb\POOWeb\obj\Debug\net9.0\compressed\wr3kx953tr-qlt8htj4ai.gz

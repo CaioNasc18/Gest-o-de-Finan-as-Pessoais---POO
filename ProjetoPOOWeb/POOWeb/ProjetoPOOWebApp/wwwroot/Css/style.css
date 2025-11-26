@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+}
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #0078d7;
+  color: white;
+}
+form label { display:block; margin:6px 0; }
+button { padding:6px 12px; background:#0078d7; color:#fff; border:none; border-radius:6px; cursor:pointer; }
