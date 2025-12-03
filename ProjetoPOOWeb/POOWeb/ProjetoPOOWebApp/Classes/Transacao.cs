@@ -1,6 +1,5 @@
 namespace ProjetoPOOWebApp.Classes
 {
-
     public enum TipoTransacao
     {
         Receita,
@@ -12,15 +11,8 @@ namespace ProjetoPOOWebApp.Classes
         public int Id { get; set; }
         public decimal Valor { get; set; }
         public DateTime Data { get; set; }
-        public string Descricao { get; set; }
+        public string Descricao { get; set; } = string.Empty;
         public int CategoriaId { get; set; }
         public TipoTransacao Tipo { get; set; }
-
-        public bool Validar()
-        {
-            if (Valor <= 0)
-                return false;
-            return true;
-        }
     }
 }
