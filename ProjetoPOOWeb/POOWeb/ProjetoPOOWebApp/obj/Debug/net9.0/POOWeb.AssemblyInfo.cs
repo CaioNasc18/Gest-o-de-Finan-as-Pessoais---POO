@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("POOWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d649dc50b64477ec3804dc545e2fb6de36440aa1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23ee793c5e8bc96f04b1d4378e9705dced33701f")]
 [assembly: System.Reflection.AssemblyProductAttribute("POOWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("POOWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

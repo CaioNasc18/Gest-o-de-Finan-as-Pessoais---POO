@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\categorias.html",
+      "PackagePath": "staticwebassets\\categorias.html"
+    },
+    {
       "Id": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
@@ -11,6 +15,14 @@
     {
       "Id": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\relatorios.html",
+      "PackagePath": "staticwebassets\\relatorios.html"
+    },
+    {
+      "Id": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\utilizadores.html",
+      "PackagePath": "staticwebassets\\utilizadores.html"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.POOWeb.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

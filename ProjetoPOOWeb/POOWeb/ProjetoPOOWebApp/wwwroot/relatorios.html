@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>Relatórios Financeiros</h1>
+
+<section>
+    <h2>Gerar Relatório</h2>
+
+    <label>Data início:
+        <input type="date" id="r-inicio">
+    </label><br><br>
+
+    <label>Data fim:
+        <input type="date" id="r-fim">
+    </label><br><br>
+
+    <button id="gen-btn">Gerar</button>
+</section>
+
+<hr>
+
+<section>
+    <h2>Resultado</h2>
+
+    <div id="resultado"></div>
+</section>
+
+<script>
+document.getElementById("gen-btn").addEventListener("click", async () => {
+
+    const inicio = document.getElementById("r-inicio").value;
+    const fim = document.getElementById("r-fim").value;
+
+    if (!inicio || !fim) {
+        alert("Escolha ambas as datas!");
+        return;
+    }
+
+    const res = await fetch(`/relatorios?inicio=${inicio}&fim=${fim}`);
+    if (!res.ok) {
+        alert("Erro ao gerar relatório");
+        return;
+    }
+
+    const data = await res.json();
+
+    document.getElementById("resultado").innerHTML = `
+        <h3>Resumo</h3>
+        <p><strong>Total Receitas:</strong> ${data.totalReceitas}</p>
+        <p><strong>Total Despesas:</strong> ${data.totalDespesas}</p>
+
+        <h3>Resumo por Categoria</h3>
+        <ul>
+            ${
+                Object.entries(data.resumoPorCategoria)
+                      .map(([cat, total]) => `<li>${cat}: ${total}</li>`)
+                      .join("")
+            }
+        </ul>
+    `;
+});
+</script>
+
+</body>
+</html>
