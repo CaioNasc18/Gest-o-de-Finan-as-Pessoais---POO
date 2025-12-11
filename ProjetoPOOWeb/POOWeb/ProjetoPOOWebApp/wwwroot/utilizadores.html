@@ -1,67 +1,73 @@
 <!doctype html>
 <html lang="pt">
+
 <head>
     <meta charset="utf-8">
     <title>Gestão de Utilizadores</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<h1>Gestão de Utilizadores</h1>
+    <h1>Gestão de Utilizadores</h1>
 
-<section>
-    <h2>Criar Utilizador</h2>
+    <section>
+        <h2>Criar Utilizador</h2>
 
-    <form id="user-form">
-        <label>Nome:<br>
-            <input type="text" id="u-nome" required>
-        </label><br><br>
+        <form id="user-form">
+            <label>Nome:<br>
+                <input type="text" id="u-nome" required>
+            </label><br><br>
 
-        <label>Email:<br>
-            <input type="email" id="u-email" required>
-        </label><br><br>
+            <label>Email:<br>
+                <input type="email" id="u-email" required>
+            </label><br><br>
 
-        <label>Senha:<br>
-            <input type="password" id="u-senha" required>
-        </label><br><br>
+            <label>Senha:<br>
+                <input type="password" id="u-senha" required>
+            </label><br><br>
 
-        <label>Perfil:<br>
-            <select id="u-tipo">
-                <option value="Administrador">Administrador</option>
-                <option value="Utilizador_Normal">Utilizador Normal</option>
-            </select>
-        </label><br><br>
+            <label>Perfil:<br>
+                <select id="u-tipo">
+                    <option value="Administrador">Administrador</option>
+                    <option value="Utilizador_Normal">Utilizador Normal</option>
+                </select>
+            </label><br><br>
 
-        <button type="submit">Criar Utilizador</button>
-    </form>
-</section>
+            <button type="submit">Criar Utilizador</button>
+        </form>
+    </section>
 
-<hr>
+    <hr>
 
-<section>
-    <h2>Lista de Utilizadores</h2>
-    <table id="user-table">
-        <thead>
-        <tr>
-            <th>ID</th><th>Nome</th><th>Email</th><th>Perfil</th><th>Ações</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</section>
+    <section>
+        <h2>Lista de Utilizadores</h2>
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Perfil</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
 
-<script>
-async function carregarUtilizadores() {
-    const res = await fetch("/utilizadores");
-    const users = await res.json();
+    <script>
+        async function carregarUtilizadores() {
+            const res = await fetch("/utilizadores");
+            const users = await res.json();
 
-    const tbody = document.querySelector("#user-table tbody");
-    tbody.innerHTML = "";
+            const tbody = document.querySelector("#user-table tbody");
+            tbody.innerHTML = "";
 
-    users.forEach(u => {
-        const row = document.createElement("tr");
+            users.forEach(u => {
+                const row = document.createElement("tr");
 
-        row.innerHTML = `
+                row.innerHTML = `
             <td>${u.id}</td>
             <td>${u.nome}</td>
             <td>${u.email}</td>
@@ -72,65 +78,66 @@ async function carregarUtilizadores() {
             </td>
         `;
 
-        tbody.appendChild(row);
-    });
-
-    // EDITAR
-    document.querySelectorAll(".edit").forEach(btn => {
-        btn.addEventListener("click", async () => {
-            const id = btn.dataset.id;
-
-            const nome = prompt("Novo nome:");
-            const email = prompt("Novo email:");
-            const senha = prompt("Nova senha:");
-
-            if (!email.includes("@")) {
-                alert("Email inválido!");
-                return;
-            }
-
-            await fetch(`/utilizadores/${id}`, {
-                method: "PUT",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({ nome, email, senha })
+                tbody.appendChild(row);
             });
 
+            // EDITAR
+            document.querySelectorAll(".edit").forEach(btn => {
+                btn.addEventListener("click", async () => {
+                    const id = btn.dataset.id;
+
+                    const nome = prompt("Novo nome:");
+                    const email = prompt("Novo email:");
+                    const senha = prompt("Nova senha:");
+
+                    if (!email.includes("@")) {
+                        alert("Email inválido!");
+                        return;
+                    }
+
+                    await fetch(`/utilizadores/${id}`, {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ nome, email, senha })
+                    });
+
+                    carregarUtilizadores();
+                });
+            });
+
+            // APAGAR
+            document.querySelectorAll(".delete").forEach(btn => {
+                btn.addEventListener("click", async () => {
+                    const id = btn.dataset.id;
+                    if (!confirm("Eliminar utilizador?")) return;
+
+                    await fetch(`/utilizadores/${id}`, { method: "DELETE" });
+                    carregarUtilizadores();
+                });
+            });
+        }
+
+        document.getElementById("user-form").addEventListener("submit", async e => {
+            e.preventDefault();
+
+            const nome = document.getElementById("u-nome").value;
+            const email = document.getElementById("u-email").value;
+            const senha = document.getElementById("u-senha").value;
+            const tipo = document.getElementById("u-tipo").value;
+
+            await fetch("/utilizadores", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nome, email, senha, tipo })
+            });
+
+            document.getElementById("user-form").reset();
             carregarUtilizadores();
         });
-    });
 
-    // APAGAR
-    document.querySelectorAll(".delete").forEach(btn => {
-        btn.addEventListener("click", async () => {
-            const id = btn.dataset.id;
-            if (!confirm("Eliminar utilizador?")) return;
-
-            await fetch(`/utilizadores/${id}`, { method: "DELETE" });
-            carregarUtilizadores();
-        });
-    });
-}
-
-document.getElementById("user-form").addEventListener("submit", async e => {
-    e.preventDefault();
-
-    const nome = document.getElementById("u-nome").value;
-    const email = document.getElementById("u-email").value;
-    const senha = document.getElementById("u-senha").value;
-    const tipo = document.getElementById("u-tipo").value;
-
-    await fetch("/utilizadores", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({ nome, email, senha, tipo })
-    });
-
-    document.getElementById("user-form").reset();
-    carregarUtilizadores();
-});
-
-window.onload = carregarUtilizadores;
-</script>
+        window.onload = carregarUtilizadores;
+    </script>
 
 </body>
+
 </html>

@@ -4,8 +4,8 @@ namespace ProjetoPOOWebApp.Classes
 {
     public enum TipoTransacao
     {
-        Receita,
-        Despesa
+        Receita = 0,
+        Despesa = 1
     }
 
     public class Transacao

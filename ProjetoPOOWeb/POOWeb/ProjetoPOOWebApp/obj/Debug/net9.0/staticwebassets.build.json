@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FZ05Hw3gl46srAIDIAaxzem/BWbQUbJhKZhY0h6JGUw=",
+  "Hash": "VWYvSsVwNv/3oXTtEBnDFFbt7j6Ps0RlJoJTioBVrPY=",
   "Source": "POOWeb",
   "BasePath": "_content/POOWeb",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-pab5oc83k5.gz",
+      "Identity": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-qklhg2dsm9.gz",
       "SourceId": "POOWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/POOWeb",
-      "RelativePath": "utilizadores#[.{fingerprint=pab5oc83k5}]?.html.gz",
+      "RelativePath": "utilizadores#[.{fingerprint=qklhg2dsm9}]?.html.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -31,8 +31,8 @@
       "RelatedAsset": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\utilizadores.html",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "eo2r9v76nc",
-      "Integrity": "skTGJPcPuH6fWDm3Fir86Xj67v61o5CBrOMXb1UI+ow=",
+      "Fingerprint": "67b715kb53",
+      "Integrity": "jvZA3n4O0JHxMUZPsc9n5I1VzAn4XCsEiOmJdRwCTlw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\utilizadores.html"
@@ -80,12 +80,12 @@
       "OriginalItemSpec": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\relatorios.html"
     },
     {
-      "Identity": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8clku14tx5.gz",
+      "Identity": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8ao3hp7ygh.gz",
       "SourceId": "POOWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/POOWeb",
-      "RelativePath": "js/script#[.{fingerprint=8clku14tx5}]?.js.gz",
+      "RelativePath": "js/script#[.{fingerprint=8ao3hp7ygh}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -94,8 +94,8 @@
       "RelatedAsset": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\js\\script.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "twbsjwlvj2",
-      "Integrity": "s1Gfu6jr8X+neIbcdR9GdPOpTTLJtP//M5ORlbHTbyc=",
+      "Fingerprint": "dk3khu9wju",
+      "Integrity": "Dcgb8uQ3f204S2WvinrJR5G0RBOF3MmpiTfmg2x/vTc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\js\\script.js"
@@ -220,8 +220,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "8clku14tx5",
-      "Integrity": "+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU=",
+      "Fingerprint": "8ao3hp7ygh",
+      "Integrity": "sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\script.js"
@@ -262,8 +262,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "pab5oc83k5",
-      "Integrity": "jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8=",
+      "Fingerprint": "qklhg2dsm9",
+      "Integrity": "eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\utilizadores.html"
@@ -295,7 +295,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:44 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -348,7 +348,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:44 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -385,7 +385,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:44 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -432,7 +432,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:44 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -493,7 +493,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:44 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -538,7 +538,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:44 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1165,13 +1165,13 @@
       ]
     },
     {
-      "Route": "js/script.8clku14tx5.js",
-      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8clku14tx5.gz",
+      "Route": "js/script.8ao3hp7ygh.js",
+      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8ao3hp7ygh.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000564652739"
+          "Quality": "0.000553097345"
         }
       ],
       "ResponseHeaders": [
@@ -1181,15 +1181,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1770"
+          "Value": "1807"
         },
         {
           "Name": "ETag",
-          "Value": "\"s1Gfu6jr8X+neIbcdR9GdPOpTTLJtP//M5ORlbHTbyc=\""
+          "Value": "\"Dcgb8uQ3f204S2WvinrJR5G0RBOF3MmpiTfmg2x/vTc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:22:12 GMT"
+          "Value": "Wed, 10 Dec 2025 15:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1209,13 +1209,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU=\""
+          "Value": "W/\"sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8clku14tx5"
+          "Value": "8ao3hp7ygh"
         },
         {
           "Name": "label",
@@ -1223,12 +1223,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU="
+          "Value": "sha256-sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc="
         }
       ]
     },
     {
-      "Route": "js/script.8clku14tx5.js",
+      "Route": "js/script.8ao3hp7ygh.js",
       "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\js\\script.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1238,7 +1238,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5601"
+          "Value": "5758"
         },
         {
           "Name": "Content-Type",
@@ -1246,11 +1246,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU=\""
+          "Value": "\"sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:22:12 GMT"
+          "Value": "Wed, 10 Dec 2025 15:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1260,7 +1260,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8clku14tx5"
+          "Value": "8ao3hp7ygh"
         },
         {
           "Name": "label",
@@ -1268,13 +1268,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU="
+          "Value": "sha256-sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc="
         }
       ]
     },
     {
-      "Route": "js/script.8clku14tx5.js.gz",
-      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8clku14tx5.gz",
+      "Route": "js/script.8ao3hp7ygh.js.gz",
+      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8ao3hp7ygh.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1283,7 +1283,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1770"
+          "Value": "1807"
         },
         {
           "Name": "Content-Type",
@@ -1291,11 +1291,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"s1Gfu6jr8X+neIbcdR9GdPOpTTLJtP//M5ORlbHTbyc=\""
+          "Value": "\"Dcgb8uQ3f204S2WvinrJR5G0RBOF3MmpiTfmg2x/vTc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:22:12 GMT"
+          "Value": "Wed, 10 Dec 2025 15:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1313,7 +1313,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8clku14tx5"
+          "Value": "8ao3hp7ygh"
         },
         {
           "Name": "label",
@@ -1321,18 +1321,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-s1Gfu6jr8X+neIbcdR9GdPOpTTLJtP//M5ORlbHTbyc="
+          "Value": "sha256-Dcgb8uQ3f204S2WvinrJR5G0RBOF3MmpiTfmg2x/vTc="
         }
       ]
     },
     {
       "Route": "js/script.js",
-      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8clku14tx5.gz",
+      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8ao3hp7ygh.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000564652739"
+          "Quality": "0.000553097345"
         }
       ],
       "ResponseHeaders": [
@@ -1342,15 +1342,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1770"
+          "Value": "1807"
         },
         {
           "Name": "ETag",
-          "Value": "\"s1Gfu6jr8X+neIbcdR9GdPOpTTLJtP//M5ORlbHTbyc=\""
+          "Value": "\"Dcgb8uQ3f204S2WvinrJR5G0RBOF3MmpiTfmg2x/vTc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:22:12 GMT"
+          "Value": "Wed, 10 Dec 2025 15:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1370,13 +1370,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU=\""
+          "Value": "W/\"sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU="
+          "Value": "sha256-sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc="
         }
       ]
     },
@@ -1391,7 +1391,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5601"
+          "Value": "5758"
         },
         {
           "Name": "Content-Type",
@@ -1399,11 +1399,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU=\""
+          "Value": "\"sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:22:12 GMT"
+          "Value": "Wed, 10 Dec 2025 15:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1413,13 +1413,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+FQ3Wctv6FX1QavgxLjLzzbijQt37FdmaZXMTvKpTjU="
+          "Value": "sha256-sEISMM8Tei9PEu2qSACh1TWoez921SCXuZhwBdMiJLc="
         }
       ]
     },
     {
       "Route": "js/script.js.gz",
-      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8clku14tx5.gz",
+      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\rqczi5fw6i-8ao3hp7ygh.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1428,7 +1428,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1770"
+          "Value": "1807"
         },
         {
           "Name": "Content-Type",
@@ -1436,11 +1436,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"s1Gfu6jr8X+neIbcdR9GdPOpTTLJtP//M5ORlbHTbyc=\""
+          "Value": "\"Dcgb8uQ3f204S2WvinrJR5G0RBOF3MmpiTfmg2x/vTc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:22:12 GMT"
+          "Value": "Wed, 10 Dec 2025 15:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1458,7 +1458,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-s1Gfu6jr8X+neIbcdR9GdPOpTTLJtP//M5ORlbHTbyc="
+          "Value": "sha256-Dcgb8uQ3f204S2WvinrJR5G0RBOF3MmpiTfmg2x/vTc="
         }
       ]
     },
@@ -1487,7 +1487,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:40 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1540,7 +1540,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:40 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1577,7 +1577,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:40 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1624,7 +1624,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:40 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1685,7 +1685,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:40 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1730,7 +1730,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:40 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1762,12 +1762,12 @@
     },
     {
       "Route": "utilizadores.html",
-      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-pab5oc83k5.gz",
+      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-qklhg2dsm9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000850340136"
+          "Quality": "0.000826446281"
         }
       ],
       "ResponseHeaders": [
@@ -1777,15 +1777,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1175"
+          "Value": "1209"
         },
         {
           "Name": "ETag",
-          "Value": "\"skTGJPcPuH6fWDm3Fir86Xj67v61o5CBrOMXb1UI+ow=\""
+          "Value": "\"jvZA3n4O0JHxMUZPsc9n5I1VzAn4XCsEiOmJdRwCTlw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:22 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1805,13 +1805,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8=\""
+          "Value": "W/\"eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8="
+          "Value": "sha256-eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI="
         }
       ]
     },
@@ -1826,7 +1826,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3744"
+          "Value": "4428"
         },
         {
           "Name": "Content-Type",
@@ -1834,11 +1834,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8=\""
+          "Value": "\"eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:22 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1848,13 +1848,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8="
+          "Value": "sha256-eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI="
         }
       ]
     },
     {
       "Route": "utilizadores.html.gz",
-      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-pab5oc83k5.gz",
+      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-qklhg2dsm9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1863,7 +1863,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1175"
+          "Value": "1209"
         },
         {
           "Name": "Content-Type",
@@ -1871,11 +1871,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"skTGJPcPuH6fWDm3Fir86Xj67v61o5CBrOMXb1UI+ow=\""
+          "Value": "\"jvZA3n4O0JHxMUZPsc9n5I1VzAn4XCsEiOmJdRwCTlw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:22 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1893,18 +1893,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-skTGJPcPuH6fWDm3Fir86Xj67v61o5CBrOMXb1UI+ow="
+          "Value": "sha256-jvZA3n4O0JHxMUZPsc9n5I1VzAn4XCsEiOmJdRwCTlw="
         }
       ]
     },
     {
-      "Route": "utilizadores.pab5oc83k5.html",
-      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-pab5oc83k5.gz",
+      "Route": "utilizadores.qklhg2dsm9.html",
+      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-qklhg2dsm9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000850340136"
+          "Quality": "0.000826446281"
         }
       ],
       "ResponseHeaders": [
@@ -1914,15 +1914,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1175"
+          "Value": "1209"
         },
         {
           "Name": "ETag",
-          "Value": "\"skTGJPcPuH6fWDm3Fir86Xj67v61o5CBrOMXb1UI+ow=\""
+          "Value": "\"jvZA3n4O0JHxMUZPsc9n5I1VzAn4XCsEiOmJdRwCTlw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:22 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1942,13 +1942,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8=\""
+          "Value": "W/\"eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pab5oc83k5"
+          "Value": "qklhg2dsm9"
         },
         {
           "Name": "label",
@@ -1956,12 +1956,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8="
+          "Value": "sha256-eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI="
         }
       ]
     },
     {
-      "Route": "utilizadores.pab5oc83k5.html",
+      "Route": "utilizadores.qklhg2dsm9.html",
       "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\wwwroot\\utilizadores.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1971,7 +1971,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3744"
+          "Value": "4428"
         },
         {
           "Name": "Content-Type",
@@ -1979,11 +1979,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8=\""
+          "Value": "\"eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:22 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1993,7 +1993,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pab5oc83k5"
+          "Value": "qklhg2dsm9"
         },
         {
           "Name": "label",
@@ -2001,13 +2001,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-jy8KjxRQFvu+BJ5WO0GSQli39zz2J4y1/eStKuxg8p8="
+          "Value": "sha256-eq/4RfxCxWd+AwS9IUVv7G/CxEsCSzNc9+4tC9FVRcI="
         }
       ]
     },
     {
-      "Route": "utilizadores.pab5oc83k5.html.gz",
-      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-pab5oc83k5.gz",
+      "Route": "utilizadores.qklhg2dsm9.html.gz",
+      "AssetFile": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\Debug\\net9.0\\compressed\\ablv2np8gm-qklhg2dsm9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2016,7 +2016,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1175"
+          "Value": "1209"
         },
         {
           "Name": "Content-Type",
@@ -2024,11 +2024,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"skTGJPcPuH6fWDm3Fir86Xj67v61o5CBrOMXb1UI+ow=\""
+          "Value": "\"jvZA3n4O0JHxMUZPsc9n5I1VzAn4XCsEiOmJdRwCTlw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 05 Dec 2025 00:24:22 GMT"
+          "Value": "Wed, 10 Dec 2025 15:32:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2046,7 +2046,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pab5oc83k5"
+          "Value": "qklhg2dsm9"
         },
         {
           "Name": "label",
@@ -2054,7 +2054,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-skTGJPcPuH6fWDm3Fir86Xj67v61o5CBrOMXb1UI+ow="
+          "Value": "sha256-jvZA3n4O0JHxMUZPsc9n5I1VzAn4XCsEiOmJdRwCTlw="
         }
       ]
     }

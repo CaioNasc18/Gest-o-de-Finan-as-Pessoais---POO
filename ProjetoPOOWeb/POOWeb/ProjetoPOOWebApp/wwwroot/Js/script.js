@@ -17,8 +17,8 @@ function formatCurrency(v) {
 function renderTransacoes(items, categorias) {
     const tbody = document.querySelector('#tx-table tbody');
     tbody.innerHTML = '';
-    items.forEach(function(t) {
-        const cat = categorias.find(function(c) { return c.id === t.categoriaId; });
+    items.forEach(function (t) {
+        const cat = categorias.find(function (c) { return c.id === t.categoriaId; });
         const row = document.createElement('tr');
 
         // botões editar / apagar
@@ -26,6 +26,8 @@ function renderTransacoes(items, categorias) {
             <button data-id="${t.id}" class="edit-btn">Editar</button>
             <button data-id="${t.id}" class="delete-btn">Apagar</button>
         `;
+
+        const tipo = document.getElementById('type-select').value === "Receita" ? 0 : 1;
 
         row.innerHTML = `
             <td>${t.id}</td>
@@ -40,8 +42,8 @@ function renderTransacoes(items, categorias) {
     });
 
     // ligar eventos dos botões
-    document.querySelectorAll('.delete-btn').forEach(function(btn) {
-        btn.addEventListener('click', async function() {
+    document.querySelectorAll('.delete-btn').forEach(function (btn) {
+        btn.addEventListener('click', async function () {
             const id = btn.getAttribute('data-id');
             if (!confirm('Eliminar transação #' + id + '?')) return;
             const res = await fetch('/transacoes/' + id, { method: 'DELETE' });
@@ -53,8 +55,8 @@ function renderTransacoes(items, categorias) {
         });
     });
 
-    document.querySelectorAll('.edit-btn').forEach(function(btn) {
-        btn.addEventListener('click', async function() {
+    document.querySelectorAll('.edit-btn').forEach(function (btn) {
+        btn.addEventListener('click', async function () {
             const id = btn.getAttribute('data-id');
             const descricao = prompt('Nova descrição:');
             const valorStr = prompt('Novo valor:');
@@ -85,7 +87,7 @@ async function loadPage() {
         // popular select
         const sel = document.getElementById('category-select');
         sel.innerHTML = '<option value="0">-- Sem categoria --</option>';
-        categorias.forEach(function(c) {
+        categorias.forEach(function (c) {
             const opt = document.createElement('option');
             opt.value = c.id;
             opt.textContent = c.nome;
@@ -104,12 +106,8 @@ document.getElementById('tx-form').addEventListener('submit', async function (e)
     const desc = document.getElementById('desc').value || '';
     const value = parseFloat(document.getElementById('value').value);
     const categoriaId = parseInt(document.getElementById('category-select').value, 10);
-    const tipo = document.getElementById('type-select').value;
-
-    if (isNaN(value) || value <= 0) {
-        alert('Insira um valor válido.');
-        return;
-    }
+    const tipoValue = document.getElementById('type-select').value;
+    const tipo = tipoValue === "Receita" ? 0 : 1;
 
     const body = {
         descricao: desc,
@@ -117,6 +115,12 @@ document.getElementById('tx-form').addEventListener('submit', async function (e)
         categoriaId: categoriaId,
         tipo: tipo
     };
+
+
+    if (isNaN(value) || value <= 0) {
+        alert('Insira um valor válido.');
+        return;
+    }
 
     const res = await fetch("/transacoes", {
         method: "POST",
