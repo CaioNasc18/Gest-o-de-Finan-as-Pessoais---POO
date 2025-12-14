@@ -25,23 +25,11 @@ app.UseStaticFiles();
 //
 // Dados em memória (simulam BD)
 //
-List<Categoria> categorias = new List<Categoria>
-{
-    new Categoria { Id = 1, Nome = "Alimentação", Descricao = "Compras e refeições" },
-    new Categoria { Id = 2, Nome = "Transporte", Descricao = "Combustível e bilhetes" },
-    new Categoria { Id = 3, Nome = "Lazer", Descricao = "Cinema, viagens" }
-};
+List<Categoria> categorias = DataStorage.Load<Categoria>("categorias.json");
 
-List<Utilizador> utilizadores = new List<Utilizador>
-{
-    new Utilizador { Id = 1, Nome = "Admin", Email = "admin@example.com", Senha = "admin", Tipo = Perfil.Administrador }
-};
+List<Utilizador> utilizadores = DataStorage.Load<Utilizador>("utilizadores.json");
 
-List<Transacao> transacoes = new List<Transacao>
-{
-    new Transacao { Id = 1, Descricao = "Supermercado", Valor = 50.75m, Data = DateTime.UtcNow.AddDays(-3), CategoriaId = 1, Tipo = TipoTransacao.Despesa },
-    new Transacao { Id = 2, Descricao = "Salário", Valor = 1200.00m, Data = DateTime.UtcNow.AddDays(-10), CategoriaId = 0, Tipo = TipoTransacao.Receita }
-};
+List<Transacao> transacoes = DataStorage.Load<Transacao>("transacoes.json");
 
 Relatorio relatorioHelper = new Relatorio();
 
@@ -75,6 +63,8 @@ app.MapPost("/categorias", (Categoria novaCategoria) =>
     if (string.IsNullOrWhiteSpace(novaCategoria.Nome)) novaCategoria.Nome = "SEM NOME";
     if (string.IsNullOrWhiteSpace(novaCategoria.Descricao)) novaCategoria.Descricao = string.Empty;
     categorias.Add(novaCategoria);
+    DataStorage.Save("categorias.json", categorias);
+
     return Results.Json(novaCategoria);
 });
 
@@ -84,6 +74,8 @@ app.MapPut("/categorias/{id:int}", (int id, Categoria categoriaAtualizada) =>
     if (existente == null) return Results.NotFound(new { error = "Categoria não encontrada" });
     existente.Nome = string.IsNullOrWhiteSpace(categoriaAtualizada.Nome) ? existente.Nome : categoriaAtualizada.Nome;
     existente.Descricao = categoriaAtualizada.Descricao ?? existente.Descricao;
+    DataStorage.Save("categorias.json", categorias);
+
     return Results.Json(existente);
 });
 
@@ -92,6 +84,8 @@ app.MapDelete("/categorias/{id:int}", (int id) =>
     Categoria? existente = categorias.FirstOrDefault(c => c.Id == id);
     if (existente == null) return Results.NotFound(new { error = "Categoria não encontrada" });
     categorias.Remove(existente);
+    DataStorage.Save("categorias.json", categorias);
+
     return Results.Ok(new { message = "Categoria removida" });
 });
 
@@ -114,6 +108,8 @@ app.MapPost("/utilizadores", (Utilizador novo) =>
     if (!novo.ValidarEmail()) return Results.BadRequest(new { error = "Email inválido" });
     if (!novo.ValidarSenha()) return Results.BadRequest(new { error = "Senha inválida (mín 4 caracteres)" });
     utilizadores.Add(novo);
+    DataStorage.Save("utilizadores.json", utilizadores);
+
     return Results.Json(novo);
 });
 
@@ -125,6 +121,7 @@ app.MapPut("/utilizadores/{id:int}", (int id, Utilizador atualizado) =>
     existente.Email = string.IsNullOrWhiteSpace(atualizado.Email) ? existente.Email : atualizado.Email;
     existente.Senha = string.IsNullOrWhiteSpace(atualizado.Senha) ? existente.Senha : atualizado.Senha;
     existente.Tipo = atualizado.Tipo;
+    DataStorage.Save("utilizadores.json", utilizadores);
     return Results.Json(existente);
 });
 
@@ -133,6 +130,7 @@ app.MapDelete("/utilizadores/{id:int}", (int id) =>
     Utilizador? existente = utilizadores.FirstOrDefault(u => u.Id == id);
     if (existente == null) return Results.NotFound(new { error = "Utilizador não encontrado" });
     utilizadores.Remove(existente);
+    DataStorage.Save("utilizadores.json", utilizadores);
     return Results.Ok(new { message = "Utilizador removido" });
 });
 
@@ -174,6 +172,7 @@ app.MapPost("/transacoes", (Transacao nova) =>
     nova.Id = novoId;
     if (nova.Data == default(DateTime)) nova.Data = DateTime.UtcNow;
     transacoes.Add(nova);
+    DataStorage.Save("transacoes.json", transacoes);
     return Results.Json(nova);
 });
 
@@ -186,6 +185,8 @@ app.MapPut("/transacoes/{id:int}", (int id, Transacao atualizado) =>
     existente.CategoriaId = atualizado.CategoriaId;
     existente.Tipo = atualizado.Tipo;
     existente.Data = atualizado.Data == default(DateTime) ? existente.Data : atualizado.Data;
+    DataStorage.Save("transacoes.json", transacoes);
+
     return Results.Json(existente);
 });
 
@@ -194,6 +195,7 @@ app.MapDelete("/transacoes/{id:int}", (int id) =>
     Transacao? existente = transacoes.FirstOrDefault(x => x.Id == id);
     if (existente == null) return Results.NotFound(new { error = "Transação não encontrada" });
     transacoes.Remove(existente);
+    DataStorage.Save("transacoes.json", transacoes);
     return Results.Ok(new { message = "Transação removida" });
 });
 
