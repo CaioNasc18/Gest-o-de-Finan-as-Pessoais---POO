@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Caio Nascimento\\.nuget\\packages\\": {},
+    "C:\\Users\\flavi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\POOWeb.csproj",
+      "projectUniqueName": "C:\\Users\\flavi\\Desktop\\bomba-poo\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\POOWeb.csproj",
       "projectName": "POOWeb",
-      "projectPath": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\POOWeb.csproj",
-      "packagesPath": "C:\\Users\\Caio Nascimento\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Caio Nascimento\\Desktop\\Projeto-POO\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\",
+      "projectPath": "C:\\Users\\flavi\\Desktop\\bomba-poo\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\POOWeb.csproj",
+      "packagesPath": "C:\\Users\\flavi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\flavi\\Desktop\\bomba-poo\\Gest-o-de-Finan-as-Pessoais---POO\\ProjetoPOOWeb\\POOWeb\\ProjetoPOOWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Caio Nascimento\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\flavi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -51,7 +51,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -75,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

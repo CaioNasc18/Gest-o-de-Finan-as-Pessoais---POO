@@ -1,143 +1,197 @@
 <!doctype html>
 <html lang="pt">
-
 <head>
     <meta charset="utf-8">
     <title>Gestão de Utilizadores</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <h1>Gestão de Utilizadores</h1>
+<h1>Gestão de Utilizadores</h1>
 
-    <section>
-        <h2>Criar Utilizador</h2>
+<!-- LOGIN -->
+<section id="login-section">
+    <h2>Login</h2>
+    <form id="login-form">
+        <input type="email" id="l-email" placeholder="Email" required><br><br>
+        <input type="password" id="l-senha" placeholder="Senha" required><br><br>
+        <button type="submit">Entrar</button>
+    </form>
+</section>
 
-        <form id="user-form">
-            <label>Nome:<br>
-                <input type="text" id="u-nome" required>
-            </label><br><br>
+<hr>
 
-            <label>Email:<br>
-                <input type="email" id="u-email" required>
-            </label><br><br>
+<!-- CRIAR UTILIZADOR -->
+<section id="create-section">
+    <h2>Criar Utilizador</h2>
+    <form id="user-form">
+        <input type="text" id="u-nome" placeholder="Nome" required><br><br>
+        <input type="email" id="u-email" placeholder="Email" required><br><br>
+        <input type="password" id="u-senha" placeholder="Senha" required><br><br>
+        <select id="u-tipo">
+            <option value="0">Administrador</option>
+            <option value="1">Utilizador Normal</option>
+        </select><br><br>
+        <button type="submit">Criar</button>
+    </form>
+</section>
 
-            <label>Senha:<br>
-                <input type="password" id="u-senha" required>
-            </label><br><br>
+<hr>
 
-            <label>Perfil:<br>
-                <select id="u-tipo">
-                    <option value="Administrador">Administrador</option>
-                    <option value="Utilizador_Normal">Utilizador Normal</option>
-                </select>
-            </label><br><br>
+<!-- LISTA (SÓ ADMIN) -->
+<section id="admin-section" style="display:none;">
+    <h2>Lista de Utilizadores</h2>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Perfil</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody id="user-table"></tbody>
+    </table>
+</section>
 
-            <button type="submit">Criar Utilizador</button>
-        </form>
-    </section>
+<script>
+let utilizadorLogado = null;
 
-    <hr>
+function mapTipo(tipoBackend) {
+    if (tipoBackend === 0 || tipoBackend === "0") return "Administrador";
+    if (tipoBackend === 1 || tipoBackend === "1") return "Utilizador Normal";
+    return tipoBackend;
+}
 
-    <section>
-        <h2>Lista de Utilizadores</h2>
-        <table id="user-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Perfil</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </section>
+// LOGIN
+document.getElementById("login-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    const email = document.getElementById("l-email").value;
+    const senha = document.getElementById("l-senha").value;
 
-    <script>
-        async function carregarUtilizadores() {
-            const res = await fetch("/utilizadores");
-            const users = await res.json();
+    const res = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, senha })
+    });
 
-            const tbody = document.querySelector("#user-table tbody");
-            tbody.innerHTML = "";
+    if (!res.ok) { alert("Credenciais inválidas"); return; }
 
-            users.forEach(u => {
-                const row = document.createElement("tr");
+    utilizadorLogado = await res.json();
+    utilizadorLogado.tipo = mapTipo(utilizadorLogado.tipo);
 
-                row.innerHTML = `
+    document.getElementById("login-section").style.display = "none";
+    document.getElementById("create-section").style.display = "none";
+
+    if (utilizadorLogado.tipo === "Administrador") {
+        document.getElementById("admin-section").style.display = "block";
+        carregarUtilizadores();
+    }
+
+    alert(`Bem-vindo ${utilizadorLogado.nome}`);
+});
+
+// CRIAR UTILIZADOR
+document.getElementById("user-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    const nome = document.getElementById("u-nome").value;
+    const email = document.getElementById("u-email").value;
+    const senha = document.getElementById("u-senha").value;
+    const tipo = Number(document.getElementById("u-tipo").value);
+
+    const body = { nome, email, senha, tipo };
+
+    const res = await fetch("/utilizadores", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+    });
+
+    if (!res.ok) { const err = await res.json(); alert(err.error); return; }
+
+    alert("Utilizador criado!");
+    if (utilizadorLogado && utilizadorLogado.tipo === "Administrador") carregarUtilizadores();
+});
+
+// CARREGAR UTILIZADORES
+async function carregarUtilizadores() {
+    const res = await fetch("/utilizadores");
+    if (!res.ok) { console.error("Erro ao carregar utilizadores"); return; }
+
+    const users = await res.json();
+    const tbody = document.getElementById("user-table");
+    tbody.innerHTML = "";
+
+    users.forEach(u => {
+        const tipoUsuario = mapTipo(u.tipo);
+        tbody.innerHTML += `
+        <tr>
             <td>${u.id}</td>
             <td>${u.nome}</td>
             <td>${u.email}</td>
-            <td>${u.tipo}</td>
+            <td>${tipoUsuario}</td>
             <td>
-                <button class="edit" data-id="${u.id}">Editar</button>
-                <button class="delete" data-id="${u.id}">Apagar</button>
+                <button onclick="editarUtilizador(${u.id})">Editar</button>
+                <button onclick="eliminarUtilizador(${u.id})">Eliminar</button>
             </td>
+        </tr>
         `;
+    });
+}
 
-                tbody.appendChild(row);
-            });
+// ELIMINAR UTILIZADOR
+async function eliminarUtilizador(id) {
+    if (!confirm("Tem certeza que deseja eliminar este utilizador?")) return;
 
-            // EDITAR
-            document.querySelectorAll(".edit").forEach(btn => {
-                btn.addEventListener("click", async () => {
-                    const id = btn.dataset.id;
+    const res = await fetch(`/utilizadores/${id}`, { method: "DELETE" });
+    if (!res.ok) {
+        const err = await res.json();
+        alert(err.error || "Erro ao eliminar");
+        return;
+    }
 
-                    const nome = prompt("Novo nome:");
-                    const email = prompt("Novo email:");
-                    const senha = prompt("Nova senha:");
+    alert("Utilizador eliminado!");
+    carregarUtilizadores();
+}
 
-                    if (!email.includes("@")) {
-                        alert("Email inválido!");
-                        return;
-                    }
+// EDITAR UTILIZADOR
+async function editarUtilizador(id) {
+    // Obter dados do utilizador
+    const res = await fetch(`/utilizadores/${id}`);
+    if (!res.ok) { alert("Utilizador não encontrado"); return; }
+    const u = await res.json();
 
-                    await fetch(`/utilizadores/${id}`, {
-                        method: "PUT",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ nome, email, senha })
-                    });
+    // Solicitar dados novos
+    const novoNome = prompt("Nome:", u.nome) || u.nome;
+    const novoEmail = prompt("Email:", u.email) || u.email;
+    const novoSenha = prompt("Senha (deixe vazio para manter):", "") || u.senha;
+    const novoTipo = prompt("Tipo (0=Administrador, 1=Utilizador Normal):", u.tipo) || u.tipo;
 
-                    carregarUtilizadores();
-                });
-            });
+    const body = {
+        nome: novoNome,
+        email: novoEmail,
+        senha: novoSenha,
+        tipo: Number(novoTipo)
+    };
 
-            // APAGAR
-            document.querySelectorAll(".delete").forEach(btn => {
-                btn.addEventListener("click", async () => {
-                    const id = btn.dataset.id;
-                    if (!confirm("Eliminar utilizador?")) return;
+    const putRes = await fetch(`/utilizadores/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+    });
 
-                    await fetch(`/utilizadores/${id}`, { method: "DELETE" });
-                    carregarUtilizadores();
-                });
-            });
-        }
+    if (!putRes.ok) {
+        const err = await putRes.json();
+        alert(err.error || "Erro ao atualizar");
+        return;
+    }
 
-        document.getElementById("user-form").addEventListener("submit", async e => {
-            e.preventDefault();
+    alert("Utilizador atualizado!");
+    carregarUtilizadores();
+}
+</script>
 
-            const nome = document.getElementById("u-nome").value;
-            const email = document.getElementById("u-email").value;
-            const senha = document.getElementById("u-senha").value;
-            const tipo = document.getElementById("u-tipo").value;
-
-            await fetch("/utilizadores", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ nome, email, senha, tipo })
-            });
-
-            document.getElementById("user-form").reset();
-            carregarUtilizadores();
-        });
-
-        window.onload = carregarUtilizadores;
-    </script>
 
 </body>
-
 </html>

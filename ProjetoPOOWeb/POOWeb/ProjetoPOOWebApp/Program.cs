@@ -141,18 +141,19 @@ app.MapDelete("/utilizadores/{id:int}", (int id) =>
 //
 app.MapPost("/login", (LoginRequest req) =>
 {
-    Utilizador? u = utilizadores.FirstOrDefault(x => x.Email == req.Email && x.Senha == req.Senha);
-    if (u == null) return Results.Unauthorized();
-    // Em produção aqui devolveríamos um token JWT. Para já devolvemos o utilizador (sem senha).
-    Utilizador responseUser = new Utilizador
+    Utilizador? u = utilizadores
+        .FirstOrDefault(x => x.Email == req.Email && x.Senha == req.Senha);
+
+    if (u == null)
+        return Results.Unauthorized();
+
+    return Results.Json(new
     {
-        Id = u.Id,
-        Nome = u.Nome,
-        Email = u.Email,
-        Senha = string.Empty,
-        Tipo = u.Tipo
-    };
-    return Results.Json(responseUser);
+        id = u.Id,
+        nome = u.Nome,
+        email = u.Email,
+        tipo = u.Tipo.ToString()
+    });
 });
 
 //

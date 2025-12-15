@@ -137,6 +137,23 @@ document.getElementById('tx-form').addEventListener('submit', async function (e)
     }
 });
 
+
+// função de relatório (exemplo)
+async function gerarRelatorio(inicio, fim) {
+    const res = await fetch(`/relatorios?inicio=${encodeURIComponent(inicio)}&fim=${encodeURIComponent(fim)}`);
+    if (!res.ok) {
+        alert('Erro ao gerar relatório');
+        return;
+    }
+    const data = await res.json();
+    console.log('Relatório', data);
+    alert(`Receitas: ${data.totalReceitas}\nDespesas: ${data.totalDespesas}`);
+}
+
+window.addEventListener('load', loadPage);
+
+
+
 // função de login (exemplo)
 async function login(email, senha) {
     const res = await fetch('/login', {
@@ -153,17 +170,3 @@ async function login(email, senha) {
         return null;
     }
 }
-
-// função de relatório (exemplo)
-async function gerarRelatorio(inicio, fim) {
-    const res = await fetch(`/relatorios?inicio=${encodeURIComponent(inicio)}&fim=${encodeURIComponent(fim)}`);
-    if (!res.ok) {
-        alert('Erro ao gerar relatório');
-        return;
-    }
-    const data = await res.json();
-    console.log('Relatório', data);
-    alert(`Receitas: ${data.totalReceitas}\nDespesas: ${data.totalDespesas}`);
-}
-
-window.addEventListener('load', loadPage);
